@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tanu Shree Sharma · Portfolio for JioStar</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=DM+Sans:wght@400;500;700&display=swap">
+<style>
+:root{--bg:#150a33;--surf:#1f1247;--surf2:#2b1a63;--ink:#f6f2ff;--mute:#b9aee0;--line:#3d2a85;--hot:#ff3d8b;--sky:#5cc8ff;--sun:#ffc857;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:dark}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#f7f3ff;--surf:#fff;--surf2:#ece4ff;--ink:#1a0d45;--mute:#5a4c8f;--line:#cdbfff;--hot:#d6126a;--sky:#0b78b8;--sun:#a86b00;color-scheme:light}}
+:root[data-theme="light"]{--bg:#f7f3ff;--surf:#fff;--surf2:#ece4ff;--ink:#1a0d45;--mute:#5a4c8f;--line:#cdbfff;--hot:#d6126a;--sky:#0b78b8;--sun:#a86b00;color-scheme:light}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.6 "DM Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque","DM Sans",system-ui,sans-serif;line-height:1.08;margin:0}
+.wrap{max-width:1080px;margin:0 auto;padding:0 1.25rem}
+section{padding:3.25rem 0}
+h2{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;margin-bottom:.5rem}
+.lede{color:var(--mute);max-width:62ch;margin:0 0 1.75rem}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+.hero{padding-top:2rem}
+.player{background:linear-gradient(135deg,var(--surf2),var(--surf));border:1px solid var(--line);border-radius:22px;padding:clamp(1.25rem,4vw,2.5rem)}
+.live{display:inline-flex;align-items:center;gap:.5rem;font-weight:700;font-size:.9rem}
+.live i{width:.7rem;height:.7rem;border-radius:50%;background:var(--hot);animation:pulse 1.6s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.25;transform:scale(.8)}}
+.player h1{font-size:clamp(2.6rem,9vw,6rem);font-weight:800;letter-spacing:-.02em;margin:1rem 0 .75rem}
+.role{color:var(--sky);font-weight:500;font-size:1.15rem;margin:0 0 1.25rem}
+.sum{max-width:66ch;margin:0 0 1.5rem}
+.scrub{height:8px;background:var(--line);border-radius:99px;overflow:hidden}
+.scrub b{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--hot),var(--sun));transition:width 1.6s cubic-bezier(.2,.8,.2,1)}
+.scrubmeta{display:flex;justify-content:space-between;color:var(--mute);font-size:.9rem;margin:.5rem 0 1.5rem;gap:.5rem;flex-wrap:wrap}
+.btns{display:flex;flex-wrap:wrap;gap:.75rem}
+.btn{text-decoration:none;font-weight:700;padding:.7rem 1.25rem;border-radius:99px;background:var(--hot);color:#fff}
+.btn.alt{background:transparent;border:1px solid var(--line);color:var(--ink)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem;margin-top:1.5rem}
+.stat{border-left:4px solid var(--sun);padding-left:.9rem}
+.stat b{font-family:"Bricolage Grotesque",sans-serif;font-size:1.9rem;display:block;line-height:1}
+.stat span{color:var(--mute);font-size:.92rem}
+/* episodes */
+.ep{display:grid;grid-template-columns:minmax(230px,320px) 1fr;gap:1.25rem;align-items:start}
+.list{display:flex;flex-direction:column;gap:6px}
+.list button{all:unset;box-sizing:border-box;cursor:pointer;background:var(--surf);border:1px solid var(--line);border-radius:12px;padding:.7rem .9rem;line-height:1.25}
+.list button small{display:block;color:var(--mute);font-size:.82rem}
+.list button b{font-weight:700}
+.list button:hover{border-color:var(--sky)}
+.list button[aria-pressed="true"]{background:var(--hot);border-color:var(--hot);color:#fff}
+.list button[aria-pressed="true"] small{color:#fff}
+.list button:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+.detail{background:var(--surf);border:1px solid var(--line);border-left:6px solid var(--hot);border-radius:16px;padding:1.5rem}
+.detail .when{color:var(--sky);font-weight:700}
+.detail h3{font-size:1.7rem;margin:.25rem 0}
+.detail .co{color:var(--mute);margin:0 0 1rem}
+.detail ul{margin:0;padding-left:1.2rem;max-width:68ch}
+.detail li{margin:.4rem 0}
+.tag{display:inline-block;margin:0 .4rem .4rem 0;border:1px solid var(--line);border-radius:99px;padding:.15rem .7rem;font-size:.85rem;color:var(--mute)}
+@media(max-width:760px){.ep{grid-template-columns:1fr}.list{flex-direction:row;overflow-x:auto;padding-bottom:6px}.list button{flex:0 0 auto;max-width:230px}}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem}
+.card{background:var(--surf);border:1px solid var(--line);border-radius:16px;padding:1.4rem}
+.card h3{font-size:1.3rem;margin-bottom:.6rem}
+.card ul{margin:0;padding-left:1.1rem;color:var(--mute)}
+.card li{margin:.3rem 0}
+.yr{font-family:"Bricolage Grotesque",sans-serif;font-size:2.6rem;font-weight:800;color:var(--sun);line-height:1}
+.tool{border-left:4px solid var(--sky);padding:.3rem 0 .3rem 1rem}
+.tool b{display:block;font-family:"Bricolage Grotesque",sans-serif;font-size:1.15rem}
+.tool span{color:var(--mute);font-size:.95rem}
+.sign{background:linear-gradient(120deg,var(--hot),#7a2cff);color:#fff;border-radius:22px;padding:clamp(1.5rem,4vw,3rem)}
+.sign h2{font-size:clamp(1.8rem,5vw,3rem)}
+.sign p{max-width:58ch;margin:.75rem 0 1.5rem}
+.sign .btn{background:#fff;color:#2a0f6b}
+.sign .btn.alt{background:transparent;color:#fff;border-color:#fff}
+footer{padding:2rem 0 3rem;color:var(--mute);font-size:.9rem}
+@media (prefers-reduced-motion:reduce){.live i{animation:none}.scrub b{transition:none}}
+</style>
+</head>
+<body>
+<main class="wrap">
+
+<section class="hero" aria-labelledby="name">
+  <div class="player">
+    <span class="live"><i></i> Now playing: a portfolio prepared for JioStar</span>
+    <h1 id="name">Tanu Shree Sharma</h1>
+    <p class="role">HR Transformation | Programme &amp; Project Delivery | People Operations &amp; Governance</p>
+    <p class="sum">HR transformation and organizational development professional with 8+ years across BFSI, consulting, and government projects. I bring a data-driven, implementation-focused approach to people strategy, change adoption, and the digital systems that support them.</p>
+    <div class="scrub" role="img" aria-label="Career span December 2016 to March 2026"><b id="bar"></b></div>
+    <div class="scrubmeta"><span>Dec 2016</span><span>10 roles</span><span>Mar 2026</span></div>
+    <div class="btns"><a class="btn" href="mailto:imtanu.sharma@gmail.com">Email Tanu</a><a class="btn alt" href="tel:+919783138805">+91 97831 38805</a></div>
+    <div class="stats">
+      <div class="stat"><b>8+</b><span>years of experience</span></div>
+      <div class="stat"><b>5</b><span>sectors: BFSI, consulting, government, IT, manufacturing</span></div>
+      <div class="stat"><b>PAN-India</b><span>employee surveys and branch visits</span></div>
+      <div class="stat"><b>ISO</b><span>formal training, moving into GRC</span></div>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="c">
+  <h2 id="c">Career, episode by episode</h2>
+  <p class="lede">Ten roles from HR and admin to delivery management. Select any episode to see what I did there.</p>
+  <div class="ep">
+    <div class="list" id="list"></div>
+    <article class="detail" id="detail" aria-live="polite"></article>
+  </div>
+</section>
+
+<section aria-labelledby="s">
+  <h2 id="s">What I bring</h2>
+  <p class="lede">Three channels of strength, built across every role above.</p>
+  <div class="grid">
+    <div class="card"><h3>Project coordination and governance</h3><ul><li>Planning, milestone tracking, delivery execution</li><li>Cross-functional and dependency management</li><li>Risk and issue tracking</li><li>Process mapping and SOP standardization</li><li>Stakeholder communication and follow-up</li></ul></div>
+    <div class="card"><h3>GRC and compliance support</h3><ul><li>Policy documentation and governance frameworks</li><li>Risk analysis, gap assessment, audit support</li><li>Change management and adoption support</li><li>Data quality validation and compliance monitoring</li></ul></div>
+    <div class="card"><h3>HR operations and analytics</h3><ul><li>Workforce planning and employee lifecycle</li><li>HRIS administration</li><li>MIS reporting, KPI tracking, workforce analytics</li><li>Training coordination and capacity building</li></ul></div>
+  </div>
+</section>
+
+<section aria-labelledby="t">
+  <h2 id="t">Tools and platforms</h2>
+  <div class="grid" style="margin-top:1.25rem">
+    <div class="tool"><b>Data and reporting</b><span>Advanced Excel, Power BI, MIS dashboards, KPI tracking</span></div>
+    <div class="tool"><b>Project and collaboration</b><span>PowerPoint, SharePoint, digital collaboration tools</span></div>
+    <div class="tool"><b>Enterprise and HR platforms</b><span>SAP, Oracle, Workday, Salesforce, ERP, HRIS and MIS systems</span></div>
+    <div class="tool"><b>Business applications</b><span>Microsoft Office Suite, reporting and presentation tools, workflow systems</span></div>
+  </div>
+</section>
+
+<section aria-labelledby="e">
+  <h2 id="e">Education</h2>
+  <div class="grid" style="margin-top:1.25rem">
+    <div class="card"><div class="yr">2016</div><h3>MBA, Human Resources</h3><p style="margin:0;color:var(--mute)">IIS University, Jaipur</p></div>
+    <div class="card"><div class="yr">B.Com</div><h3>Bachelor of Commerce</h3><p style="margin:0;color:var(--mute)">Lal Bahadur Shastri PG College, Jaipur</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="sign">
+    <h2>Ready for the next season</h2>
+    <p>I connect people, process, and technology, and I keep delivery moving. I would love to bring that to the teams behind JioStar.</p>
+    <div class="btns"><a class="btn" href="mailto:imtanu.sharma@gmail.com">imtanu.sharma@gmail.com</a><a class="btn alt" href="tel:+919783138805">+91 97831 38805</a></div>
+  </div>
+</section>
+</main>
+<footer><div class="wrap">Tanu Shree Sharma · Delhi NCR, India</div></footer>
+
+<script>
+const E=[
+["Jan 2026 – Mar 2026","Delivery Manager","Bridgexcel Innovations Pvt. Ltd.","Consulting",["Aligned internal teams and client stakeholders on requirements, activities, and delivery expectations.","Tracked project activities, timelines, and follow-ups so progress and open tasks stayed visible.","Improved workflow documentation and process standardisation for more efficient operations.","Ran knowledge sharing on requirements and workflows for consistent execution."]],
+["Apr 2024 – Dec 2025","Project Officer","C-DAC Hyderabad","Government",["Coordinated implementation of a cybersecurity awareness web portal and its stakeholder requirements.","Worked with government, academic, and technical stakeholders to resolve queries and support delivery.","Built MIS dashboards and KPI reports tracking participation and implementation progress.","Supported data migration, validation, and monitoring across programme platforms.","Contributed to website UI planning, portal content, and reporting workflow improvements.","Ran cybersecurity awareness, training, and capacity-building initiatives."]],
+["May 2023 – Feb 2024","Deputy Manager, Talent Management","AU Small Finance Bank","BFSI",["Managed employee relations and grievance resolution for the commercial banking team.","Ran PAN-India employee surveys and one-on-one meetings to surface engagement needs.","Coordinated induction, orientation, exits, and full and final settlements.","Worked with IT teams on system access, equipment, and asset tracking."]],
+["Jun 2021 – Apr 2023","Senior HR Specialist","Metadologie India Pvt. Ltd.","IT",["Managed recruitment across job portals, campus hiring, staffing vendors, and contract channels.","Collaborated with development, QA, and business analyst teams on the company website and HR digital initiatives.","Maintained employee databases and records; handled onboarding, training, and expenses.","Ran surveys, branch visits, and engagement activities; supported COVID-19 awareness communication."]],
+["Jan 2020 – Feb 2021","Customer Service Executive, Operations","HDFC Sales Pvt. Ltd.","BFSI",["Processed insurance cases with accurate data entry and documentation.","Supported KYC verification, document validation, and site-verification updates for loan processing.","Validated data during system process changes and kept operational records compliant."]],
+["Nov 2018 – Mar 2019","US HR Operations","eTeam Inc.","Staffing",["Managed timesheets, payroll queries, and coordination with payroll teams.","Supported contractor lifecycle: induction, contract extensions, and notifications.","Maintained employee records to contractual and US HR process requirements."]],
+["Sep 2017 – Sep 2018","HR Executive","Vitromed Healthcare","Healthcare",["Coordinated L&D, training needs analysis, and mandatory GMP, cleanroom, safety, and ISO training.","Managed recruitment, onboarding, attendance, and lifecycle documentation.","Supported HR audits, ISO compliance records, and client-visit readiness."]],
+["Apr 2017 – Sep 2017","Assistant HR Executive","Derawala Industries Pvt. Ltd.","Manufacturing",["Supported recruitment and hiring for manufacturing workforce needs.","Managed attendance, employee files, and HR documentation.","Handled grievances and salary queries; coordinated induction and compliance training."]],
+["Dec 2016 – Apr 2017","HR and Admin Executive","Symsafe Systems Pvt. Ltd.","IT",["Ran engagement activities and internal communication.","Supported day-to-day HR and administrative operations.","Managed LinkedIn engagement for organisational visibility."]]
+];
+const list=document.getElementById('list'),det=document.getElementById('detail');
+function show(i){
+  const e=E[i];
+  [...list.children].forEach((b,j)=>b.setAttribute('aria-pressed',j===i));
+  det.innerHTML='<span class="when">'+e[0]+'</span><h3>'+e[1]+'</h3><p class="co">'+e[2]+'</p><span class="tag">'+e[3]+'</span><ul>'+e[4].map(x=>'<li>'+x+'</li>').join('')+'</ul>';
+}
+E.forEach((e,i)=>{const b=document.createElement('button');b.type='button';b.innerHTML='<b>'+e[1]+'</b><small>'+e[2]+'</small>';b.onclick=()=>show(i);list.appendChild(b)});
+show(0);
+requestAnimationFrame(()=>setTimeout(()=>{document.getElementById('bar').style.width='100%'},200));
+</script>
+</body>
+</html>
